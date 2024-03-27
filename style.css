@@ -1,0 +1,129 @@
+/* Reset default styles */
+body, h1, h2, h3, p, ul, li, table, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #000;
+    color: #00bcd4;
+    padding: 10px 0;
+    text-align: center;
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 50px;
+    height: 50px;
+}
+
+nav {
+    text-align: center;
+    margin-top: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #00bcd4;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+main {
+    padding: 20px;
+}
+
+.employee-list table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.employee-list th, .employee-list td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.employee-list th {
+    background-color: #f2f2f2;
+}
+
+.employee-list tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.employee-list tr:hover {
+    background-color: #ddd;
+}
+
+.employee-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer-social {
+    margin-top: 10px;
+}
+
+.footer-social ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-social ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.footer-social ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+
+
