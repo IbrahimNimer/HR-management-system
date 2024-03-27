@@ -1,37 +1,39 @@
 // Employee constructor
-function Employee(id, fullName, department, level, imageUrl) {
-    this.id = id;
-    this.fullName = fullName;
-    this.department = department;
-    this.level = level;
-    this.salary = this.calculateSalary();
-    this.imageUrl = imageUrl;
+class Employee {
+    constructor(id, fullName, department, level, imageUrl) {
+        this.id = id;
+        this.fullName = fullName;
+        this.department = department;
+        this.level = level;
+        this.salary = this.calculateSalary();
+        this.imageUrl = imageUrl;
+    }
+    // Prototype function to calculate salary
+    calculateSalary() {
+        let minSalary, maxSalary;
+        switch (this.level) {
+            case 'Senior':
+                minSalary = 1500;
+                maxSalary = 2000;
+                break;
+            case 'Mid-Senior':
+                minSalary = 1000;
+                maxSalary = 1500;
+                break;
+            case 'Junior':
+                minSalary = 500;
+                maxSalary = 1000;
+                break;
+            default:
+                minSalary = 0;
+                maxSalary = 0;
+        }
+        let salary = Math.floor(Math.random() * (maxSalary - minSalary + 1)) + minSalary;
+        let netSalary = salary - (salary * 0.075); // 7.5% tax
+        return netSalary;
+    }
 }
 
-// Prototype function to calculate salary
-Employee.prototype.calculateSalary = function() {
-    let minSalary, maxSalary;
-    switch (this.level) {
-        case 'Senior':
-            minSalary = 1500;
-            maxSalary = 2000;
-            break;
-        case 'Mid-Senior':
-            minSalary = 1000;
-            maxSalary = 1500;
-            break;
-        case 'Junior':
-            minSalary = 500;
-            maxSalary = 1000;
-            break;
-        default:
-            minSalary = 0;
-            maxSalary = 0;
-    }
-    let salary = Math.floor(Math.random() * (maxSalary - minSalary + 1)) + minSalary;
-    let netSalary = salary - (salary * 0.075); // 7.5% tax
-    return netSalary;
-};
 
 // Sample employees
 let employees = [
