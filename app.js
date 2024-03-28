@@ -1,4 +1,4 @@
-// Employee constructor
+/// Employee constructor
 class Employee {
     constructor(id, fullName, department, level, imageUrl) {
         this.id = id;
@@ -32,8 +32,22 @@ class Employee {
         let netSalary = salary - (salary * 0.075); // 7.5% tax
         return netSalary;
     }
-}
 
+    // Prototype function to render employee information
+    render() {
+        let row = `
+            <tr>
+                <td>${this.id}</td>
+                <td>${this.fullName}</td>
+                <td>${this.department}</td>
+                <td>${this.level}</td>
+                <td>${this.salary}</td>
+                <td><img src="${this.imageUrl}" alt="${this.fullName}" class="employee-image"></td>
+            </tr>
+        `;
+        return row;
+    }
+}
 
 // Sample employees
 let employees = [
@@ -49,15 +63,5 @@ let employees = [
 // Render employees in the main section
 let tableBody = document.querySelector('.employee-list tbody');
 employees.forEach(employee => {
-    let row = `
-        <tr>
-            <td>${employee.id}</td>
-            <td>${employee.fullName}</td>
-            <td>${employee.department}</td>
-            <td>${employee.level}</td>
-            <td>${employee.salary}</td>
-            <td><img src="${employee.imageUrl}" alt="${employee.fullName}" class="employee-image"></td>
-        </tr>
-    `;
-    tableBody.innerHTML += row;
+    tableBody.innerHTML += employee.render();
 });
