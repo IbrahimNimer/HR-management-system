@@ -1,5 +1,5 @@
 /* Reset default styles */
-body, h1, h2, h3, p, ul, li, table, th, td {
+body, h1, h2, h3, p, ul, li {
     margin: 0;
     padding: 0;
 }
@@ -7,7 +7,7 @@ body, h1, h2, h3, p, ul, li, table, th, td {
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f9f9f9;
-    color: #333;
+    color: #00bcd4;
     line-height: 1.6;
 }
 
@@ -59,35 +59,28 @@ main {
     padding: 20px;
 }
 
-.employee-list table {
+.employee-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card {
+    width: calc(50% - 60px);
+    margin-bottom: 20px;
+    background-color: #222020;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(255, 0, 0, 0.1);
+}
+
+.card img {
     width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
-.employee-list th, .employee-list td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}
-
-.employee-list th {
-    background-color: #f2f2f2;
-}
-
-.employee-list tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-.employee-list tr:hover {
-    background-color: #ddd;
-}
-
-.employee-image {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
+.card-content {
+    padding: 10px;
 }
 
 .footer {
@@ -123,4 +116,15 @@ main {
     color: #fff;
     text-decoration: none;
     font-size: 20px;
+}
+
+form{
+    color: #000;
+}
+
+.form-container {
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
 }
