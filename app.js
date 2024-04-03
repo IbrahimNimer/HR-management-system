@@ -54,6 +54,19 @@ function generateEmployeeId() {
     return Math.floor(1000 + Math.random() * 9000);
 }
 
+// Function to save employees to Local Storage
+function saveEmployeesToLocalStorage() {
+    localStorage.setItem('employees', JSON.stringify(employees));
+}
+
+// Function to load employees from Local Storage
+function loadEmployeesFromLocalStorage() {
+    let storedEmployees = localStorage.getItem('employees');
+    if (storedEmployees) {
+        employees = JSON.parse(storedEmployees).map(employee => new Employee(employee.id, employee.fullName, employee.department, employee.level, employee.imageUrl));
+    }
+}
+
 // Add event listener to form
 let form = document.getElementById('addEmployeeForm');
 form.addEventListener('submit', function(event) {
@@ -68,6 +81,7 @@ form.addEventListener('submit', function(event) {
     let employee = new Employee(id, fullName, department, level, imageUrl);
     employees.push(employee);
 
+    saveEmployeesToLocalStorage();
     renderEmployees();
 });
 
@@ -92,4 +106,5 @@ let employees = [
 ];
 
 // Initial rendering
+loadEmployeesFromLocalStorage();
 renderEmployees();
